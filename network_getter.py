@@ -14,8 +14,8 @@ def cleaner(text):
 
 def get_dollar(soup):
     doll = soup.find_all('td', class_= "rates-val")
-    db = cleaner(doll[0].text) + ' руб'
-    ds = cleaner(doll[1].text) + ' руб'
+    db = cleaner(doll[0].text)
+    ds = cleaner(doll[1].text)
     return db, ds
 
 db, ds = get_dollar(soup)
@@ -26,8 +26,8 @@ soup = BeautifulSoup(resp, 'html.parser')
 
 def get_euro(soup):
     eur = soup.find_all('td', class_= "rates-val")
-    eb = cleaner(eur[0].text) + ' руб'
-    es = cleaner(eur[1].text) + ' руб'
+    eb = cleaner(eur[0].text)
+    es = cleaner(eur[1].text)
     return eb, es
 
 eb, es = get_euro(soup)
